@@ -10,21 +10,23 @@ if (PHP_SAPI == 'cli-server') {
 }
 
 require __DIR__ . '/../vendor/autoload.php';
-
 session_start();
 
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
 $app = new \Slim\App($settings);
 
-// Set up dependencies
-require __DIR__ . '/../src/dependencies.php';
+$container = $app->getContainer(); // Get container
 
-// Register middleware
-require __DIR__ . '/../src/middleware.php';
 
-// Register routes
-require __DIR__ . '/../src/routes.php';
+require __DIR__ . '/../src/dependencies.php'; // Set up <dependencies></dependencies>
+require __DIR__ . '/../src/middleware.php'; // Register middleware
+require __DIR__ . '/../src/routes.php'; // Register routes
+
+// Register component on container
+$container['view'] = function ($container) {
+    return new \Slim\Views\PhpRenderer('../templates/');
+};
 
 // Run app
 $app->run();

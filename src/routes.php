@@ -1,10 +1,7 @@
 <?php
-// Routes
-
-$app->get('/[{name}]', function ($request, $response, $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
-
-    // Render index view
-    return $this->renderer->render($response, 'index.phtml', $args);
+// Render PHP template in route
+$app->get('/', function ($request, $response, $args) {
+  $this->logger->info("Inicio '/' route");
+  $config = $this->get('settings')['proyecto'];
+  return $this->view->render($response, 'login.phtml', $config);
 });
