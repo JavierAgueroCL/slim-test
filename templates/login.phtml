@@ -24,6 +24,7 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/custom.css" type="text/css" rel="stylesheet" media="screen,projection">
 
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -44,11 +45,12 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form">
+      <form id="login-form" class="login-form" method="post" action="">
         <div class="row">
           <div class="input-field col s12 center">
             <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
             <p class="center login-form-text">Entrar</p>
+            <div class="status success" id="reponse">Los datos son incorrectos</div>
           </div>
         </div>
         <div class="row margin">
@@ -73,7 +75,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="index.html" class="btn waves-effect waves-light col s12">Entrar</a>
+            <input type="submit" class="btn waves-effect waves-light col s12 boton" value="Entrar">
           </div>
         </div>
         <div class="row">
@@ -106,6 +108,8 @@
 
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="js/plugins.js"></script>
+
+  <script type="text/javascript" src="js/main.js"></script>
 
 </body>
 

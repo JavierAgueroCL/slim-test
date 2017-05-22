@@ -8,14 +8,15 @@ $app = new \Slim\App($settings);
 
 require __DIR__ . '/../src/dependencies.php'; // Set up <dependencies></dependencies>
 
-$app->post('/login', function (Request $request, $response, $args) use ($app){
+$app->post('/login', function ($request, $response, $args) use ($app){
   $this->logger->info("Login '/login' route");
   //$config = $this->get('settings')['proyecto'];
 
-
   if ($request->isPost()) {
-        $username = $request->getParsedBody()['username'];
-        $password = $request->getParsedBody()['password'];
+        $username = $request->getParams()['usuario'];
+        $password = $request->getParams()['contrasena'];
+
+        echo "logeado";
 
         //$result = $app->authenticator->authenticate($username, $password);
         //
@@ -25,6 +26,7 @@ $app->post('/login', function (Request $request, $response, $args) use ($app){
         //     $messages = $result->getMessages();
         //     $app->flashNow('error', $messages[0]);
         // }
+
     }
 
 });
