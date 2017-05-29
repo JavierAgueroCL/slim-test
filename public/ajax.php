@@ -13,10 +13,10 @@ $app->post('/login', function ($request, $response, $args) use ($app){
   //$config = $this->get('settings')['proyecto'];
 
   if ($request->isPost()) {
-        $username = $request->getParams()['usuario'];
-        $password = $request->getParams()['contrasena'];
+        $username = $request->getParams()['email'];
+        $password = $request->getParams()['password'];
 
-        echo "logeado";
+
 
         //$result = $app->authenticator->authenticate($username, $password);
         //

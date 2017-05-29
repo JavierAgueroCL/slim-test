@@ -50,20 +50,20 @@
           <div class="input-field col s12 center">
             <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
             <p class="center login-form-text">Entrar</p>
-            <div class="status success" id="reponse">Los datos son incorrectos</div>
+            <div class="status hide" id="response">Los datos son incorrectos</div>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input id="username" type="email" name="email">
+            <input id="username" type="email" name="email" required />
             <label for="username" class="center-align">Email</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password" type="password" name="password">
+            <input id="password" type="password" name="password" required>
             <label for="password">Contraseña</label>
           </div>
         </div>
